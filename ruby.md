@@ -1,3 +1,12 @@
+## Safe `require`
+
+```ruby
+def safe_require(name)
+  require name
+rescue LoadError
+end
+```
+
 ## Tail Call Optimization
 
 ```ruby
