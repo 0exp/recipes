@@ -1,3 +1,17 @@
+## Inline Bundler
+
+```ruby
+require 'bundler/inline'
+
+gemfile do
+  source 'https://rubygems.org'
+  gem 'any_cache'
+end
+
+AnyCache.build
+```
+
+
 ## Safe `require`
 
 ```ruby
