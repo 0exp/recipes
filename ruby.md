@@ -1,3 +1,9 @@
+## Inplace `rescue`
+
+```ruby
+failing_code() rescue $!.backtrace.grep /pattern/
+```
+
 ## Inline Bundler
 
 ```ruby
