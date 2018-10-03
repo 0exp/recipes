@@ -1,3 +1,9 @@
+## Email Regexp (stdlib)
+
+```ruby
+URI::MailTo::EMAIL_REGEXP
+```
+
 ## Inplace `rescue`
 
 ```ruby
