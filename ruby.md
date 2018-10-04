@@ -1,3 +1,24 @@
+## Ultra Minimal Rack App
+
+```ruby
+# ./config.ru
+
+require 'rack'
+
+class MinimalRackApp
+  def call(env)
+    sleep(10) # simulate simple activity
+    Rack::Response.new(env).finish
+  end
+end
+
+app = Rack::Builder.new do
+  run MinimalRackApp
+end
+
+run app
+```
+
 ## Email Regexp (stdlib)
 
 ```ruby
