@@ -13,7 +13,7 @@ class MinimalRackApp
 end
 
 app = Rack::Builder.new do
-  run MinimalRackApp
+  run MinimalRackApp.new
 end
 
 run app
