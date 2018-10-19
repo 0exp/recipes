@@ -1,3 +1,35 @@
+## Object allocations tracer (where this object came from?)
+
+```ruby
+# tracer.rb
+
+require 'objspace'
+
+module Tracer
+  class << self
+    include ObjectSpace
+
+    def start
+      ObjectSpace.trace_object_allocations_start
+    end
+
+    def where_this_came_from(object)
+      "#{ObjectSpace.allocation_sourcefile(object)}:" \
+      "#{ObjectSpace.allocation_sourceline(object)}"
+    end
+  end
+end
+
+Tracer.start
+
+object = Object.new
+
+another_object = Object.new
+
+puts Tracer.where_this_came_from(object)         # => tracer.rb:22
+puts Tracer.where_this_came_from(another_object) # => tracer.rb:24
+```
+
 ## Ultra Minimal Rack App
 
 ```ruby
