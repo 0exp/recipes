@@ -10,12 +10,12 @@ module Tracer
     include ObjectSpace
 
     def start
-      ObjectSpace.trace_object_allocations_start
+      trace_object_allocations_start
     end
 
     def where_this_came_from(object)
-      "#{ObjectSpace.allocation_sourcefile(object)}:" \
-      "#{ObjectSpace.allocation_sourceline(object)}"
+      "#{allocation_sourcefile(object)}:" \
+      "#{allocation_sourceline(object)}"
     end
   end
 end
