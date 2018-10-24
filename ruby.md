@@ -1,3 +1,15 @@
+## Any object as an exception
+
+```ruby
+class Numeric
+  def exception
+    RuntimeError.new("Singularity o.O <#{self}>")
+  end
+end
+
+raise 42 # => RuntimeError: Singularity o.O <42>
+```
+
 ## Object allocations tracer (where this object came from?)
 
 ```ruby
