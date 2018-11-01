@@ -1,3 +1,10 @@
+## Restore original gem code after any forgotten change
+
+```ruby
+gem pristine qonfig # restore one gem
+gem pristine --all # restore all gems
+```
+
 ## Any object as an exception
 
 ```ruby
