@@ -1,3 +1,10 @@
+## Your current pathname, LOL (without Pathname o.o)
+
+```ruby
+Pathname.new(__FILE__).realpath # NO! >:[=]
+__dir__ # YES ;)
+```
+
 ## Restore original gem code after any forgotten change
 
 ```ruby
