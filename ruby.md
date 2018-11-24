@@ -1,4 +1,28 @@
-## Shared rspec <before> block
+## Object unfreeze (O.O)
+
+```ruby
+require 'fiddle'
+
+class Object
+  def unfreeze
+    Fiddle::Pointer.new(object_id * 2)[1] &= ~(1 << 3)
+  end
+end
+
+frost = [].freeze
+frost.frozen? # => true
+frost << 123 # FrozenError: can't modify frozen Array
+# ---
+frost.unfreeze
+frost.frozen? # => false
+frost << 123 # => [123]
+# ---
+frost.freeze
+frost.frozen? # => true
+frost << 123 # => FrozenError: can't modify frozen Array
+```
+
+## Shared rspec -before- block
 
 ```ruby
 context '' do
