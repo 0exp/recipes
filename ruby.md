@@ -22,25 +22,6 @@ frost.frozen? # => true
 frost << 123 # => FrozenError: can't modify frozen Array
 ```
 
-## Shared rspec -before- block
-
-```ruby
-context '' do
-  shared_examples 'shared before' do
-    before { user.jurisdiction = 'MT' }
-  end
-
-  context '' do
-    include_examples 'shared before' do
-      let(:user) { create(:user) }
-    end
-
-    specify '' do
-      user.jurisdiction # => MT (YES, it WORKS, used from <before> block ;))
-    end
-  end
-```
-
 ## Your current pathname, LOL (without Pathname o.o)
 
 ```ruby
