@@ -1,3 +1,13 @@
+## ~Ideal time measurement (monotonic)
+
+```ruby
+time_start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+# ... your code...
+time_end   = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+
+time_end - time_start
+```
+
 ## Object unfreeze (O.O)
 
 ```ruby
