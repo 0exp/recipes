@@ -1,3 +1,23 @@
+## Dont forget about proc usage style priorities!
+
+```ruby
+def x(*, &block)
+  block.call(__method__) if block_given?
+end
+
+def y(*, &block)
+  block.call(__method__) if block_given?
+end
+
+x y { |a| puts a }
+# => :y
+
+x y do |a|
+  puts a
+end
+# => :x
+```
+
 ## ~Ideal time measurement (monotonic)
 
 ```ruby
