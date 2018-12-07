@@ -5,7 +5,7 @@
 - `Preferences => Package Settings => LSP => Settings`
 - configure:
 
-```json
+```javascript
 {
   "clients": {
     "ruby (solorgraph)": {
