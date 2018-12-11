@@ -1,3 +1,35 @@
+## Exception cause (Exception#cause) (an error that is raised before)
+
+```ruby
+A = Class.new(StandardError)
+B = Class.new(StandardError)
+C = Class.new(StandardError)
+
+def fail_with_A
+  raise A
+end
+
+def fail_with_B
+  fail_with_A
+rescue
+  raise B
+end
+
+def fail_with_C
+  fail_with_B
+rescue
+  raise C
+end
+
+def fail_cuases
+  fail_with_C
+rescue => error
+  puts "Error chain: #{error.cause.cause} -> #{error.cause} -> #{error}"
+end
+
+fail_cuases # => Error chain: A => B => C
+```
+
 ## Dont forget about proc usage style priorities!
 
 ```ruby
