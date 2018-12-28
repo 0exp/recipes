@@ -21,13 +21,13 @@ rescue
   raise C
 end
 
-def fail_cuases
+def fail_causes
   fail_with_C
 rescue => error
   puts "Error chain: #{error.cause.cause} -> #{error.cause} -> #{error}"
 end
 
-fail_cuases # => Error chain: A => B => C
+fail_causes # => Error chain: A => B => C
 ```
 
 ## Dont forget about proc usage style priorities!
