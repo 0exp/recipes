@@ -1,3 +1,11 @@
+### brew: switch package version
+
+```shell
+# for example: ("readline") from any to installed 7.0.5
+
+brew switch readline 7.0.5
+```
+
 ### Kill the Finder
 
 1. `defaults write com.apple.finder QuitMenuItem -bool false`
