@@ -8,7 +8,7 @@
 ```javascript
 {
   "clients": {
-    "ruby (solorgraph)": {
+    "ruby (solargraph)": {
       "command": ["/Users/DaiveR/.rbenv/shims/solargraph", "stdio"], // push your own path to solargraph
       "enabled": true,
       "env": {},
