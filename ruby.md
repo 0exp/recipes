@@ -110,7 +110,7 @@ end
 raise 42 # => RuntimeError: Singularity o.O <42>
 ```
 
-## Object allocations tracer (where this object came from?)
+## Object allocation tracer (where did this object come from?)
 
 ```ruby
 # tracer.rb
@@ -228,7 +228,7 @@ class User
   end
 end
 
-User.isntance_methods(false) # => [:first_name]
+User.instance_methods(false) # => [:first_name]
 ```
 
 #### Class: `class_eval` + `def`
@@ -243,7 +243,7 @@ class User
   end
 end
 
-User.isntance_methods(false) # => [:first_name]
+User.instance_methods(false) # => [:first_name]
 ```
 
 #### Class: `instance_eval` + `def`
@@ -251,7 +251,7 @@ User.isntance_methods(false) # => [:first_name]
 
 ```ruby
 class User
-  instnace_eval do
+  instance_eval do
     def first_name
       'Name'
     end
@@ -322,7 +322,7 @@ User.singleton_methods(false) # => [:first_name]
 
 
 #### Class: `class_eval` + `def self.`
-- defines methdod on **class**-level:
+- defines method on **class**-level:
 
 ```ruby
 class User
@@ -568,7 +568,6 @@ User.singleton_class.methods(false) # => [:first_name]
 ```ruby
 class User
   class << self
-
     class_eval do
       define_singleton_method :first_name do
         'Name'

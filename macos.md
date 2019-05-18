@@ -6,11 +6,11 @@
 brew switch readline 7.0.5
 ```
 
-### Kill the Finder
+### Kill Finder
 
 1. `defaults write com.apple.finder QuitMenuItem -bool false`
 2. `killall Finder`
 
 New features:
-  - Finder => Main Menu => Quit Fineder
+  - Finder => Main Menu => Quit Finder
   - Command-Q works as expected :)
