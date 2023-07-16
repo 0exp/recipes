@@ -1,3 +1,20 @@
+## Simplest memory leak checker
+
+```ruby
+# NOTE: based on the old ripper memory leak
+# NOTE: the main idea is `ps` check in some points of time
+
+require "ripper"
+
+20.times do
+  100_000.times do
+    Ripper.parse("")
+  end
+
+  puts `ps -o rss= -p #{$$}`
+end
+```
+
 ## Generate your own RSA(256) token pair (with JWT example)
 
 ```ruby
@@ -5,7 +22,6 @@ private_key = OpenSSL::PKey::RSA.new(2048) # 2048 is a token length
 public_key = private_key.public_key
 jwk = JWT::JWK.new(public_key)
 headers = { kid: jwk.kid, typ: 'JWT' }
-```
 
 ## IO Modes
 
