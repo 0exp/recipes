@@ -22,6 +22,7 @@ private_key = OpenSSL::PKey::RSA.new(2048) # 2048 is a token length
 public_key = private_key.public_key
 jwk = JWT::JWK.new(public_key)
 headers = { kid: jwk.kid, typ: 'JWT' }
+```
 
 ## IO Modes
 
