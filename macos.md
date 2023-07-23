@@ -1,3 +1,9 @@
+### Show hidden files in Finder
+
+```shell
+command + shift + .
+```
+
 ### brew: switch package version
 
 ```shell
