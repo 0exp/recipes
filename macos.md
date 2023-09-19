@@ -1,3 +1,11 @@
+### Install from damaged installer
+
+```shell
+sudo xattr -r -d com.apple.quarantine /path/to/your/damaged/isntaller
+
+# then - execute your file ;)
+```
+
 ### Show hidden files in Finder
 
 ```shell
